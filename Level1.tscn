@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://7tiwbo518iaq"]
+
+[ext_resource type="PackedScene" uid="uid://dhuoo68ho4dg6" path="res://firstMessage.tscn" id="1_kyxg0"]
+
+[node name="Node" type="Node" unique_id=470275410]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=942214453]
+
+[node name="Label" parent="." unique_id=573660238 instance=ExtResource("1_kyxg0")]

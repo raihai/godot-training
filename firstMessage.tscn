@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dhuoo68ho4dg6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4web"]
+font_size = 50
+font_color = Color(0.2204929, 0.725909, 0.9999986, 1)
+
+[node name="Label" type="Label" unique_id=573660238]
+offset_left = 409.0
+offset_top = 219.0
+offset_right = 691.0
+offset_bottom = 400.0
+text = "Hello World"
+label_settings = SubResource("LabelSettings_d4web")
+horizontal_alignment = 1
+vertical_alignment = 1
