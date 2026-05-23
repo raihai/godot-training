@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cd4ab83i02svt"]
 
-[ext_resource type="Shader" uid="uid://2t5qyf8jephv" path="res://testGround.gdshader" id="1_rkps0"]
+[ext_resource type="Script" uid="uid://c2k5o1ce08s0b" path="res://Scripts/BasicMovement.cs" id="1_rkps0"]
+[ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_85h15"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rkps0"]
 sky_top_color = Color(0.08653041, 0.33116814, 0.99999994, 1)
@@ -16,11 +17,43 @@ background_mode = 2
 sky = SubResource("Sky_85h15")
 tonemap_mode = 2
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1be8e"]
+[sub_resource type="Shader" id="Shader_85h15"]
+code = "hader_type spatial;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the material.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85h15"]
 render_priority = 0
-shader = ExtResource("1_rkps0")
+shader = SubResource("Shader_85h15")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rkps0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rkps0"]
+
+[sub_resource type="Curve" id="Curve_85h15"]
+_limits = [0.0, 2.5, -0.5, 2.0671377]
+_data = [Vector2(0.18683553, 0.02524352), 0.0, 1.3045328, 0, 1, Vector2(1.3958719, 1.602471), 0.90539926, 0.90539926, 0, 0, Vector2(2.0671377, 2.0837176), 0.716924, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66313"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_fhsvb"]
+colors = PackedColorArray(0.83, 1, 0.9971667, 0.019607844, 0.8255208, 1, 0.99727374, 0.60784316)
 
 [node name="Main" type="Node3D" unique_id=751697577]
 
@@ -33,12 +66,8 @@ light_color = Color(0.94054496, 0.92459893, 0.9496458, 1)
 shadow_enabled = true
 shadow_blur = 1.28
 
-[node name="Player" type="MeshInstance3D" parent="." unique_id=99097734]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_1be8e")
-
 [node name="floor" type="CSGBox3D" parent="." unique_id=1779569056]
-transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0, -2, 0)
+transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0.1, -1.8, 0)
 use_collision = true
 size = Vector3(1000, 2, 1000)
 material = SubResource("ShaderMaterial_85h15")
@@ -128,6 +157,77 @@ size = Vector3(4.7000003, 1, 3)
 transform = Transform3D(4.093064, 0.027675841, -0.23678216, -7.850025e-08, 19.112185, 2.2338948, 0.2965386, -0.59107184, 5.0569434, 32.514496, -5.7028294, 35.998398)
 size = Vector3(4.7000003, 1, 3)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1726541954]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -10, 60, 30)
-fov = 90.0
+[node name="RoomCSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=2044393210]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 192.5, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="RoomCSGCombiner3D2" unique_id=888831153]
+transform = Transform3D(3, 0, 0, 0, 15.39384, 0, 0, 0, 4.1000004, 5, 5, 10.5)
+size = Vector3(1, 1, 20.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="RoomCSGCombiner3D2/CSGBox3D2" unique_id=2040460866]
+transform = Transform3D(-1.4570463e-08, 0, 1.3666669, 0, 1.2500001, 0, -0.24390243, 0, -4.371139e-08, 14.248333, 0.07795325, -10.365852)
+size = Vector3(1, 1, 21.1)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="RoomCSGCombiner3D2/CSGBox3D2/CSGBox3D5" unique_id=1106867811]
+transform = Transform3D(2.113627, 0, -8.526513e-14, 0, 0.5, 0, -1.7763568e-15, 0, 1.4, -1.0000019, -0.07795325, 5.3902435)
+operation = 2
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="RoomCSGCombiner3D2/CSGBox3D2/CSGBox3D5" unique_id=1046337427]
+transform = Transform3D(2.113627, 0, -2.842171e-14, 0, 0.5, 0, -1.7763568e-15, 0, 1.4, -1, -0.12992209, 0)
+operation = 2
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="RoomCSGCombiner3D2/CSGBox3D2" unique_id=1420266774]
+transform = Transform3D(-1.4570463e-08, 0, 1.3666669, 0, 1.2500001, 0, -0.24390243, 0, -4.371139e-08, 14, -0.0025584102, 10.365852)
+size = Vector3(1, 0.84, 21.1)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RoomCSGCombiner3D2/CSGBox3D2" unique_id=645139189]
+transform = Transform3D(-9.4180564e-07, -1.5399996, 0, 1.1197202, -3.4983085e-09, 0, 0, 0, 2.5243895, -0.3565712, -0.17982161, -0.5365855)
+operation = 2
+sides = 20
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="RoomCSGCombiner3D2/CSGBox3D2" unique_id=67105032]
+transform = Transform3D(0.24776891, 0.25903112, 1.3034464, 0.3370612, -0.6494761, 0.46914288, 1.5033715, 0.10292418, -0.32000196, -0.6666658, 0, 6.341462)
+outer_radius = 1.3000001
+sides = 20
+ring_sides = 10
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="RoomCSGCombiner3D2/CSGBox3D2" unique_id=11828295]
+transform = Transform3D(0.3333333, 0, 0, 0, 1.2499999, 0, 0, 0, 1.5999999, 28.333332, 0.12342599, -0.12195134)
+size = Vector3(1, 1, 13)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="RoomCSGCombiner3D2/CSGBox3D2/CSGBox3D3" unique_id=884723234]
+transform = Transform3D(2.113627, 0, -8.526513e-14, 0, 0.5, 0, -1.7763568e-15, 0, 1.3999999, -1, -0.07795325, -0.006097555)
+operation = 2
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=496263425]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 200, 80, -50)
+fov = 65.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=203749536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 0, -44.5)
+script = ExtResource("1_rkps0")
+Speed = 30
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1550208817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 0, -38.699997)
+shape = SubResource("SphereShape3D_rkps0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=350956629]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_rkps0")
+
+[node name="TrailRenderer" type="Node3D" parent="CharacterBody3D" unique_id=1580032858]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("2_85h15")
+Lifetime = 0.6
+MinVertexDistance = 1.0
+curve = SubResource("Curve_85h15")
+alignment = 0
+bevelAmount = 0.303
+material = SubResource("StandardMaterial3D_66313")
+castShadows = 1
+colorGradient = SubResource("Gradient_fhsvb")
