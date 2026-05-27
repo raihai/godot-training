@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd4ab83i02svt"]
 
-[ext_resource type="Script" uid="uid://c2k5o1ce08s0b" path="res://Scripts/BasicMovement.cs" id="1_rkps0"]
+[ext_resource type="Script" uid="uid://bww500dqv66ea" path="res://Scripts/PMovement.cs" id="1_85h15"]
 [ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_85h15"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rkps0"]
@@ -67,7 +67,7 @@ shadow_enabled = true
 shadow_blur = 1.28
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=1779569056]
-transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0.1, -1.8, 0)
+transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0.2, -1.8, -0.7)
 use_collision = true
 size = Vector3(1000, 2, 1000)
 material = SubResource("ShaderMaterial_85h15")
@@ -209,8 +209,7 @@ fov = 65.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=203749536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 0, -44.5)
-script = ExtResource("1_rkps0")
-Speed = 30
+script = ExtResource("1_85h15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1550208817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 0, -38.699997)
