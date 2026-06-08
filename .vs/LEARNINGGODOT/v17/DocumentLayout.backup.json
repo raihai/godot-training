@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\Godot Projects\\learning-godot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\Scripts\\BasicMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\BasicMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\StateMachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StateMachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\Scripts\\LineRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\LineRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\CharacterBody3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharacterBody3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\pmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\pmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\linerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\linerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\addons\\testAssets\\TrailRenderer\\Runtime\\TrailRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:addons\\testAssets\\TrailRenderer\\Runtime\\TrailRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Projects\\learning-godot\\Scripts\\TrailRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\TrailRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\basicmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\basicmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\trailrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\trailrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,33 +50,71 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StateMachine.cs",
+              "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\StateMachine.cs",
+              "RelativeDocumentMoniker": "StateMachine.cs",
+              "ToolTip": "D:\\Godot Projects\\learning-godot\\StateMachine.cs",
+              "RelativeToolTip": "StateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T20:17:07.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CharacterBody3d.cs",
+              "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\CharacterBody3d.cs",
+              "RelativeDocumentMoniker": "CharacterBody3d.cs",
+              "ToolTip": "D:\\Godot Projects\\learning-godot\\CharacterBody3d.cs",
+              "RelativeToolTip": "CharacterBody3d.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T20:15:12.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PMovement.cs",
+              "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\PMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\PMovement.cs",
+              "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\PMovement.cs",
+              "RelativeToolTip": "Scripts\\PMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T18:44:44.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BasicMovement.cs",
+              "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\BasicMovement.cs",
+              "RelativeDocumentMoniker": "Scripts\\BasicMovement.cs",
+              "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\BasicMovement.cs",
+              "RelativeToolTip": "Scripts\\BasicMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T19:52:35.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LineRenderer.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\LineRenderer.cs",
               "RelativeDocumentMoniker": "Scripts\\LineRenderer.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\LineRenderer.cs",
               "RelativeToolTip": "Scripts\\LineRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-23T20:16:48.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BasicMovement.cs",
-              "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\BasicMovement.cs",
-              "RelativeDocumentMoniker": "Scripts\\BasicMovement.cs",
-              "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\BasicMovement.cs",
-              "RelativeToolTip": "Scripts\\BasicMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:52:35.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "TrailRenderer.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\TrailRenderer.cs",
               "RelativeDocumentMoniker": "Scripts\\TrailRenderer.cs",
@@ -76,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "TrailRenderer.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\addons\\testAssets\\TrailRenderer\\Runtime\\TrailRenderer.cs",
               "RelativeDocumentMoniker": "addons\\testAssets\\TrailRenderer\\Runtime\\TrailRenderer.cs",

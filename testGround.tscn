@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cd4ab83i02svt"]
 
-[ext_resource type="Script" uid="uid://bww500dqv66ea" path="res://Scripts/PMovement.cs" id="1_85h15"]
+[ext_resource type="Script" uid="uid://b863ima4ue8ep" path="res://Scripts/Player/StateMachine.cs" id="1_kwewr"]
 [ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_85h15"]
+[ext_resource type="Script" uid="uid://bwl24b76xpl4h" path="res://Scripts/Player/Player.cs" id="3_8lxdw"]
+[ext_resource type="Script" uid="uid://cioyu4g5t5l4n" path="res://Scripts/Player/EffectManager.cs" id="4_406xd"]
+[ext_resource type="Script" uid="uid://k70hxf3rnse6" path="res://MovementComponent.cs" id="5_pi4b6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rkps0"]
 sky_top_color = Color(0.08653041, 0.33116814, 0.99999994, 1)
@@ -67,7 +70,7 @@ shadow_enabled = true
 shadow_blur = 1.28
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=1779569056]
-transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0.2, -1.8, -0.7)
+transform = Transform3D(0.88704014, 0, 0, 0, 0.88704014, 0, 0, 0, 0.88704014, 0.4, -1.8, -1.7)
 use_collision = true
 size = Vector3(1000, 2, 1000)
 material = SubResource("ShaderMaterial_85h15")
@@ -209,7 +212,7 @@ fov = 65.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=203749536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 0, -44.5)
-script = ExtResource("1_85h15")
+script = ExtResource("1_kwewr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1550208817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 0, -38.699997)
@@ -230,3 +233,15 @@ bevelAmount = 0.303
 material = SubResource("StandardMaterial3D_66313")
 castShadows = 1
 colorGradient = SubResource("Gradient_fhsvb")
+
+[node name="StateMachine" type="Node" parent="CharacterBody3D" unique_id=2136438159]
+script = ExtResource("1_kwewr")
+
+[node name="Player" type="Node" parent="CharacterBody3D" unique_id=2026189859]
+script = ExtResource("3_8lxdw")
+
+[node name="EffectsManager" type="Node" parent="CharacterBody3D" unique_id=1680313780]
+script = ExtResource("4_406xd")
+
+[node name="MovementComponent" type="Node" parent="CharacterBody3D" unique_id=992135165]
+script = ExtResource("5_pi4b6")
