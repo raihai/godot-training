@@ -1,15 +1,35 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
-public partial class StateMachine : Node
+public class StateMachine 
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    private Dictionary<string, BaseState> _playerStates = new Dictionary<string, BaseState>();
+    private BaseState _currentState; 
+    public StateMachine() { }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public void AddState(string StateName, BaseState NewState) {
+        _playerStates[StateName] = NewState;
+    }
+
+    public void ChangeState(string state) {
+        if (_currentState != null) {
+            _currentState.OnExitState();
+        }
+        _currentState = _playerStates.GetValueOrDefault(state);
+        if (_currentState != null) {
+            _currentState.OnEnterState();
+        }
+    }
+
+    public void Update(double delta) {
+        _currentState.Update(delta);
+    }
+
+    public void PhysicsUpdate(double delta) {
+        _currentState.PhysicsUpdate(delta);
+    }
+
+   
 }
+  

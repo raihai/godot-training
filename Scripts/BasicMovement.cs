@@ -38,6 +38,6 @@ public partial class BasicMovement : CharacterBody3D
         }
 
         Velocity = _targetVelocity;
-        MoveAndSlide();
+        MoveAndSlide(); 
     }
 }

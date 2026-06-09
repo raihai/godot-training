@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://cd4ab83i02svt"]
 
-[ext_resource type="Script" uid="uid://b863ima4ue8ep" path="res://Scripts/Player/StateMachine.cs" id="1_kwewr"]
 [ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_85h15"]
 [ext_resource type="Script" uid="uid://bwl24b76xpl4h" path="res://Scripts/Player/Player.cs" id="3_8lxdw"]
-[ext_resource type="Script" uid="uid://cioyu4g5t5l4n" path="res://Scripts/Player/EffectManager.cs" id="4_406xd"]
-[ext_resource type="Script" uid="uid://k70hxf3rnse6" path="res://MovementComponent.cs" id="5_pi4b6"]
+[ext_resource type="Script" uid="uid://brbkiysgfssab" path="res://Scripts/Player/EffectsManager.cs" id="4_kwewr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rkps0"]
 sky_top_color = Color(0.08653041, 0.33116814, 0.99999994, 1)
@@ -210,19 +208,18 @@ operation = 2
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 200, 80, -50)
 fov = 65.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=203749536]
+[node name="BFISH" type="CharacterBody3D" parent="." unique_id=203749536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 0, -44.5)
-script = ExtResource("1_kwewr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1550208817]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BFISH" unique_id=1550208817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 0, -38.699997)
 shape = SubResource("SphereShape3D_rkps0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=350956629]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BFISH" unique_id=350956629]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("SphereMesh_rkps0")
 
-[node name="TrailRenderer" type="Node3D" parent="CharacterBody3D" unique_id=1580032858]
+[node name="TrailRenderer" type="Node3D" parent="BFISH" unique_id=1580032858]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("2_85h15")
 Lifetime = 0.6
@@ -234,14 +231,9 @@ material = SubResource("StandardMaterial3D_66313")
 castShadows = 1
 colorGradient = SubResource("Gradient_fhsvb")
 
-[node name="StateMachine" type="Node" parent="CharacterBody3D" unique_id=2136438159]
-script = ExtResource("1_kwewr")
-
-[node name="Player" type="Node" parent="CharacterBody3D" unique_id=2026189859]
+[node name="Player" type="Node" parent="BFISH" unique_id=2026189859 node_paths=PackedStringArray("PlayerBody3D")]
 script = ExtResource("3_8lxdw")
+PlayerBody3D = NodePath("..")
 
-[node name="EffectsManager" type="Node" parent="CharacterBody3D" unique_id=1680313780]
-script = ExtResource("4_406xd")
-
-[node name="MovementComponent" type="Node" parent="CharacterBody3D" unique_id=992135165]
-script = ExtResource("5_pi4b6")
+[node name="EffectsManager" type="Node" parent="BFISH" unique_id=1680313780]
+script = ExtResource("4_kwewr")
