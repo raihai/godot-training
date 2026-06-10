@@ -6,8 +6,10 @@ public partial class Player : Node
 {
 	[Export] public CharacterBody3D PlayerBody3D { set; get; }
 	private Vector3 _playerVelocity {  get; set; }
-	private float _moveFrontBackValue { get; set; }
-	private float _moveSideValue { get; set; }
+	private float _moveFrontValue { get; set; }
+	private float _moveBackValue {  get; set; }
+	private float _moveLeftValue {  get; set; }
+	private float _moveRightValue { get; set; }
 
 
 
@@ -19,11 +21,14 @@ public partial class Player : Node
 
 	public override void _Ready()
 	{
-		_moveFrontBackValue = 0f;
-		_moveSideValue = 0f;
+		_moveFrontValue = 0f;
+		_moveBackValue = 0f;
+		_moveLeftValue = 0f;
+        _moveRightValue = 0f;
+
 		_moveSpeed = 15f;
 
-		_playerVelocity = Vector3.Zero;
+        _playerVelocity = Vector3.Zero;
 		stateMachine = new StateMachine();
 
 		_idleState = new IdleState(this);
@@ -37,10 +42,10 @@ public partial class Player : Node
 	
 	public override void _Process(double delta)
 	{
-        if (Input.IsActionPressed("move_right")) _moveFrontBackValue += 1.0f;
-        if (Input.IsActionPressed("move_left")) _moveFrontBackValue -= 1.0f;
-        if (Input.IsActionPressed("move_back")) _moveSideValue += 1.0f;
-        if (Input.IsActionPressed("move_forward")) _moveSideValue -= 1.0f;
+        _moveFrontValue = Input.IsActionPressed("move_back") ? 1.0f : 0.0f;
+        _moveBackValue = Input.IsActionPressed("move_forward") ? -1.0f : 0.0f;
+        _moveLeftValue = Input.IsActionPressed("move_left")? -1.0f : 0.0f;
+        _moveRightValue = Input.IsActionPressed("move_right") ? 1.0f : 0.0f;
 
 		stateMachine.Update(delta);
 	}
@@ -49,15 +54,20 @@ public partial class Player : Node
         stateMachine.PhysicsUpdate(delta);
     }
 
-	public float GetFrontBackValue() {
-		return _moveFrontBackValue;
+	public float GetFrontValue() {
+		return _moveFrontValue;
 	}
 
-	public float GetSideValue() {
-		return _moveSideValue;
+	public float GetBackValue() {
+		return _moveBackValue;
 	}
 
-
+	public float GetLeftValue() {
+		return _moveLeftValue;
+	}
+	public float GetRightValue() {
+	return _moveRightValue;
+	}
 	public Vector3 GetPlayerVeloctiy() {
 		return _playerVelocity;
 	}

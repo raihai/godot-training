@@ -204,15 +204,18 @@ size = Vector3(1, 1, 13)
 transform = Transform3D(2.113627, 0, -8.526513e-14, 0, 0.5, 0, -1.7763568e-15, 0, 1.3999999, -1, -0.07795325, -0.006097555)
 operation = 2
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=496263425]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 200, 80, -50)
-fov = 65.0
-
 [node name="BFISH" type="CharacterBody3D" parent="." unique_id=203749536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 0, -44.5)
 
+[node name="3DPersonView" type="Camera3D" parent="BFISH" unique_id=496263425]
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 10, 15.000002)
+fov = 70.0
+
+[node name="TopDownView" type="Camera3D" parent="BFISH" unique_id=1668255137]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 40, 10)
+fov = 70.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BFISH" unique_id=1550208817]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.7, 0, -38.699997)
 shape = SubResource("SphereShape3D_rkps0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BFISH" unique_id=350956629]

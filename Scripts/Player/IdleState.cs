@@ -8,10 +8,12 @@ public partial class IdleState : BaseState
     public IdleState(Player player) {
         this.player = player;
     }
-    public override void OnEnterState() { }
+    public override void OnEnterState() {
+        GD.Print("Yo, this is the Idle State");
+    }
     public override void Update(double delta) {
         if (player != null) {
-            if (player.GetFrontBackValue() != 0 && player.GetSideValue() != 0) {
+            if (player.GetFrontValue() != 0 || player.GetBackValue() != 0 || player.GetLeftValue() != 0 || player.GetRightValue() != 0) {
                 player.GetStateMachine().ChangeState("Run");
             }
         }
@@ -20,6 +22,6 @@ public partial class IdleState : BaseState
     
     }
     public override void OnExitState() {
-
+        GD.Print("Leaving the Idle state");
     }
 }
