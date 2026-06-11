@@ -14,6 +14,10 @@ public partial class IdleState : BaseState
     public override void Update(double delta) {
 
         if (player != null) {
+            if (!player.PlayerBody3D.IsOnFloor()) {
+                player.GetStateMachine().ChangeState("Airborne");
+            }
+
             if (player.GetFrontValue() != 0 || player.GetBackValue() != 0 || player.GetLeftValue() != 0 || player.GetRightValue() != 0) {
                 player.GetStateMachine().ChangeState("Run");
             }

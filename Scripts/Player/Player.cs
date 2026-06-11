@@ -10,14 +10,14 @@ public partial class Player : Node
 	private float _moveBackValue {  get; set; }
 	private float _moveLeftValue {  get; set; }
 	private float _moveRightValue { get; set; }
-    private float _moveSpeed { get; set; } = 15f;
-    private float _acceleration { get; set; } = 75f;
+    private float _playerMoveForce { get; set; } = 20f;
+    private float _acceleration { get; set; } = 70f;
 
+	//states
     private StateMachine stateMachine { get; set; } = new StateMachine();
-
 	private IdleState _idleState;
 	private RunState _runState;
-
+	private AirborneState _airborneState;
 
 	public override void _Ready()
 	{
@@ -28,9 +28,11 @@ public partial class Player : Node
 
 		_idleState = new IdleState(this);
 		_runState = new RunState(this);
+		_airborneState = new AirborneState(this);
 
         stateMachine.AddState("Idle", _idleState);
-        stateMachine.AddState("Run", _runState); 
+        stateMachine.AddState("Run", _runState);
+		stateMachine.AddState("Airborne", _airborneState);
 		stateMachine.ChangeState("Idle");
 	}
 	
@@ -66,15 +68,15 @@ public partial class Player : Node
 		return _playerVelocity;
 	}
 
-	public float GetPlayerSpeed() { 
-		return _moveSpeed;
+	public float GetPlayerMoveForce() { 
+		return _playerMoveForce;
 	}
 
 	public StateMachine GetStateMachine() {
 		return stateMachine;
 	}
 
-	public float GetAccelerationValue() {
+	public float GetPlayerAccelerationValue() {
 		return _acceleration;
 	}
 
