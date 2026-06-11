@@ -12,11 +12,14 @@ public partial class IdleState : BaseState
         GD.Print("Yo, this is the Idle State");
     }
     public override void Update(double delta) {
+
         if (player != null) {
             if (player.GetFrontValue() != 0 || player.GetBackValue() != 0 || player.GetLeftValue() != 0 || player.GetRightValue() != 0) {
                 player.GetStateMachine().ChangeState("Run");
             }
         }
+
+
     }
     public override void PhysicsUpdate(double delta) { 
     

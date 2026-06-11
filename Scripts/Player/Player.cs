@@ -4,20 +4,20 @@ using static Godot.TextServer;
 
 public partial class Player : Node
 {
-	[Export] public CharacterBody3D PlayerBody3D { set; get; }
-	private Vector3 _playerVelocity {  get; set; }
+	[Export] public CharacterBody3D PlayerBody3D { set; get; } 
+	private Vector3 _playerVelocity {  get; set; } = Vector3.Zero;
 	private float _moveFrontValue { get; set; }
 	private float _moveBackValue {  get; set; }
 	private float _moveLeftValue {  get; set; }
 	private float _moveRightValue { get; set; }
+    private float _moveSpeed { get; set; } = 15f;
+    private float _acceleration { get; set; } = 75f;
 
+    private StateMachine stateMachine { get; set; } = new StateMachine();
 
-
-	private StateMachine stateMachine { get; set; }
 	private IdleState _idleState;
 	private RunState _runState;
 
-	private float _moveSpeed { get; set; }
 
 	public override void _Ready()
 	{
@@ -26,24 +26,18 @@ public partial class Player : Node
 		_moveLeftValue = 0f;
         _moveRightValue = 0f;
 
-		_moveSpeed = 15f;
-
-        _playerVelocity = Vector3.Zero;
-		stateMachine = new StateMachine();
-
 		_idleState = new IdleState(this);
 		_runState = new RunState(this);
 
-        stateMachine.AddState("Idle", _idleState); // add state 
-        stateMachine.AddState("Run", _runState); // add state
+        stateMachine.AddState("Idle", _idleState);
+        stateMachine.AddState("Run", _runState); 
 		stateMachine.ChangeState("Idle");
-
 	}
 	
 	public override void _Process(double delta)
 	{
-        _moveFrontValue = Input.IsActionPressed("move_back") ? 1.0f : 0.0f;
-        _moveBackValue = Input.IsActionPressed("move_forward") ? -1.0f : 0.0f;
+        _moveFrontValue = Input.IsActionPressed("move_forward") ? -1.0f : 0.0f;
+        _moveBackValue = Input.IsActionPressed("move_back") ? 1.0f : 0.0f;
         _moveLeftValue = Input.IsActionPressed("move_left")? -1.0f : 0.0f;
         _moveRightValue = Input.IsActionPressed("move_right") ? 1.0f : 0.0f;
 
@@ -79,5 +73,10 @@ public partial class Player : Node
 	public StateMachine GetStateMachine() {
 		return stateMachine;
 	}
+
+	public float GetAccelerationValue() {
+		return _acceleration;
+	}
+
 }
                           
