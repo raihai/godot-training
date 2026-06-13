@@ -21,56 +21,47 @@ public partial class RunState : BaseState
     
     }
     public override void PhysicsUpdate(double delta) {
-
-        //direction
+       
         Vector3 direction = Vector3.Zero;
         if (player.GetFrontValue() == -1 && player.GetBackValue() == 1) { direction.Z = player.GetBackValue();} // 
         else { direction.Z = player.GetFrontValue() + player.GetBackValue();}
 
+        // get direction
         if (player.GetRightValue() == 1 && player.GetLeftValue() == -1) { direction.X = player.GetRightValue();} 
         else { direction.X = player.GetLeftValue() + player.GetRightValue();}
         if (direction != Vector3.Zero) {
             direction = direction.Normalized();
-
         }
         // velocity movement
-        /// float targetSpeed = direction.Length() * player.GetPlayerMoveForce();
-        float acceleration = player.GetPlayerAccelerationValue(); // get which friction to use 
-
-        //if (player.GetFrontValue() == -1 && player.GetBackValue() == 1) { 
-           // _currentHorizontalSpeed = Mathf.MoveToward(_currentHorizontalSpeed, 0, 15 *(float)delta); // slow down 
-          //  GD.Print()
-       // } else { 
-        _currentHorizontalSpeed = Mathf.MoveToward(_currentHorizontalSpeed, player.GetPlayerMoveForce(), acceleration *(float)delta); // speedup to max
-
-        // if player is already moving and the the opposited direction is hit we decelrate until the direction vector is same as the input vector and speed up
-       // GD.Print(acceleration);
-
-
+        float acceleration = player.GetPlayerAccelerationValue();
+        _currentHorizontalSpeed = Mathf.MoveToward(_currentHorizontalSpeed, player.GetPlayerMoveForce(), acceleration *(float)delta); // speedup
         _currPlayerVelocity.X = direction.X * _currentHorizontalSpeed; 
         _currPlayerVelocity.Z = direction.Z * _currentHorizontalSpeed;
-        GD.Print(_currPlayerVelocity.X);
-        GD.Print(_currPlayerVelocity.Z);
+
+        GD.Print(_currPlayerVelocity);
+
+        if (!player.PlayerBody3D.IsOnFloor()) {
+            player.GetStateMachine().ChangeState("Airborne");
+        } else {
+            _currPlayerVelocity.Y = 0;
+        }
+
+        // handle sloped floor
+        //player.PlayerBody3D.FloorSnapLength = 0.5f;
+       // player.PlayerBody3D.FloorMaxAngle = Mathf.DegToRad(50f);
 
         player.PlayerBody3D.Velocity = _currPlayerVelocity;
         player.PlayerBody3D.MoveAndSlide();
 
-        if (!player.PlayerBody3D.IsOnFloor()) {
-            _currPlayerVelocity.Y -= player.GetPlayerAccelerationValue() * (float)delta;
-        } else {
-            _currPlayerVelocity.Y = 0; 
-        }
-
-        _prevDirection = direction;
-
-        if (player != null) {
-            if (player.GetFrontValue() == 0 && player.GetBackValue() == 0 && player.GetLeftValue() == 0 && player.GetRightValue() == 0) {
-                player.GetStateMachine().ChangeState("Idle");
-            }
+        if (player.PlayerBody3D.Velocity == Vector3.Zero) {
+            player.GetStateMachine().ChangeState("Idle");
         }
     }
     public override void OnExitState() {
         GD.Print("Leaving the Run state");
+        //player.PlayerBody3D.Velocity = Vector3.Zero;
         _currentHorizontalSpeed = 0f; // reset the accumalated velocity
     }
+
+    
 }

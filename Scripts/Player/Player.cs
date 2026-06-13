@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Reflection.Metadata;
 using static Godot.TextServer;
 
 public partial class Player : Node
@@ -34,7 +35,11 @@ public partial class Player : Node
         stateMachine.AddState("Run", _runState);
 		stateMachine.AddState("Airborne", _airborneState);
 		stateMachine.ChangeState("Idle");
-	}
+
+		//handle sloped floor
+        this.PlayerBody3D.FloorSnapLength = 0.5f;
+        this.PlayerBody3D.FloorMaxAngle = Mathf.DegToRad(45f);
+    }
 	
 	public override void _Process(double delta)
 	{
