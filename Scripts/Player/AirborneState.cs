@@ -5,7 +5,7 @@ public partial class AirborneState : BaseState
 {
     public Player player;
     private Vector3 _currPlayerVelocity;
-    private float _airborneSpeed = 30;
+    //private float _airborneSpeed = 30;
 	public AirborneState(Player player) {
         this.player = player;
 	}

@@ -46,10 +46,6 @@ public partial class RunState : BaseState
             _currPlayerVelocity.Y = 0;
         }
 
-        // handle sloped floor
-        //player.PlayerBody3D.FloorSnapLength = 0.5f;
-       // player.PlayerBody3D.FloorMaxAngle = Mathf.DegToRad(50f);
-
         player.PlayerBody3D.Velocity = _currPlayerVelocity;
         player.PlayerBody3D.MoveAndSlide();
 
@@ -66,7 +62,7 @@ public partial class RunState : BaseState
     public override void HandleInput(InputEvent input) {
         if (input.IsActionPressed("move_jump") && player.PlayerBody3D.IsOnFloor()) {
             GD.Print("Jumping input from running state");
-            player.GetStateMachine().ChangeState("Airborne");
+            player.GetStateMachine().ChangeState("Jump");
         }
     }
     

@@ -19,6 +19,7 @@ public partial class Player : Node
 	private IdleState _idleState;
 	private RunState _runState;
 	private AirborneState _airborneState;
+	private JumpState _jumpState;
 
 	public override void _Ready()
 	{
@@ -30,9 +31,11 @@ public partial class Player : Node
 		_idleState = new IdleState(this);
 		_runState = new RunState(this);
 		_airborneState = new AirborneState(this);
+		_jumpState = new JumpState(this);
 
         stateMachine.AddState("Idle", _idleState);
         stateMachine.AddState("Run", _runState);
+		stateMachine.AddState("Jump", _jumpState);
 		stateMachine.AddState("Airborne", _airborneState);
 		stateMachine.ChangeState("Idle");
 
