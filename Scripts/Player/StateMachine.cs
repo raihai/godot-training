@@ -23,13 +23,16 @@ public class StateMachine
     }
 
     public void Update(double delta) {
-        _currentState.Update(delta);
+        _currentState?.Update(delta);
     }
 
     public void PhysicsUpdate(double delta) {
-        _currentState.PhysicsUpdate(delta);
+        _currentState?.PhysicsUpdate(delta);
     }
 
+    public void HandleInput(InputEvent input) {
+        _currentState?.HandleInput(input);
+    }
    
 }
   

@@ -32,4 +32,11 @@ public partial class IdleState : BaseState
     public override void OnExitState() {
         GD.Print("Leaving the Idle state");
     }
+
+    public override void HandleInput(InputEvent input) {
+        if(input.IsActionPressed("move_jump") && player.PlayerBody3D.IsOnFloor()) {
+            GD.Print("Jumping input from Idle");
+            player.GetStateMachine().ChangeState("Airborne");
+        }
+    }
 }

@@ -49,11 +49,16 @@ public partial class Player : Node
         _moveRightValue = Input.IsActionPressed("move_right") ? 1.0f : 0.0f;
 
 		stateMachine.Update(delta);
+		
 	}
 
     public override void _PhysicsProcess(double delta) {
         stateMachine.PhysicsUpdate(delta);
     }
+
+	public override void _Input(InputEvent input) {
+		stateMachine.HandleInput(input);
+	}
 
 	public float GetFrontValue() {
 		return _moveFrontValue;

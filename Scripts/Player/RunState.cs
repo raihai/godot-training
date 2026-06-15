@@ -63,5 +63,11 @@ public partial class RunState : BaseState
         _currentHorizontalSpeed = 0f; // reset the accumalated velocity
     }
 
+    public override void HandleInput(InputEvent input) {
+        if (input.IsActionPressed("move_jump") && player.PlayerBody3D.IsOnFloor()) {
+            GD.Print("Jumping input from running state");
+            player.GetStateMachine().ChangeState("Airborne");
+        }
+    }
     
 }
