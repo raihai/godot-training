@@ -12,7 +12,7 @@ public partial class Player : Node
 	private float _moveLeftValue {  get; set; }
 	private float _moveRightValue { get; set; }
     private float _playerMoveForce { get; set; } = 20f;
-    private float _acceleration { get; set; } = 70f;
+    private float _acceleration { get; set; } =	100f;
 
 	//states
     private StateMachine stateMachine { get; set; } = new StateMachine();

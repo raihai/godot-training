@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\jumpstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\runstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\runstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\idlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\idlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,20 +19,16 @@
       "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\basestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\basestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\runstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\runstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\airbornestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\airbornestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|d:\\godot projects\\learning-godot\\scripts\\player\\basestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAEC8A48-217C-477E-85C5-0B34085D5C35}|LearningGodot.csproj|solutionrelative:scripts\\player\\basestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,22 +37,30 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 204,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 211,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Player.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\Player.cs",
               "RelativeToolTip": "Scripts\\Player\\Player.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-09T08:58:09.612Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -62,7 +70,7 @@
               "RelativeDocumentMoniker": "Scripts\\Player\\JumpState.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\JumpState.cs",
               "RelativeToolTip": "Scripts\\Player\\JumpState.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA1wAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-15T13:59:00.999Z",
               "EditorCaption": ""
@@ -75,34 +83,26 @@
               "RelativeDocumentMoniker": "Scripts\\Player\\AirborneState.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\AirborneState.cs",
               "RelativeToolTip": "Scripts\\Player\\AirborneState.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAYwAcAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwCoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-15T13:46:11.182Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         },
         {
-          "DockedWidth": 196,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 189,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "RunState.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\RunState.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\RunState.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\RunState.cs",
               "RelativeToolTip": "Scripts\\Player\\RunState.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAywD8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowC8AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-09T12:48:27.607Z",
               "IsPinned": true,
@@ -110,20 +110,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IdleState.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\IdleState.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\IdleState.cs",
               "ToolTip": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\IdleState.cs",
               "RelativeToolTip": "Scripts\\Player\\IdleState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-09T12:55:05.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "BaseState.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\BaseState.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\BaseState.cs",
@@ -131,12 +131,11 @@
               "RelativeToolTip": "Scripts\\Player\\BaseState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T08:56:03.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-09T08:56:03.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "StateMachine.cs",
               "DocumentMoniker": "D:\\Godot Projects\\learning-godot\\Scripts\\Player\\StateMachine.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\StateMachine.cs",

@@ -45,7 +45,7 @@ public partial class RunState : BaseState
         } else {
             _currPlayerVelocity.Y = 0;
         }
-
+        player.PlayerBody3D.FloorSnapLength = player.PlayerBody3D.IsOnFloor() ? 0.3f : 0f;
         player.PlayerBody3D.Velocity = _currPlayerVelocity;
         player.PlayerBody3D.MoveAndSlide();
 
