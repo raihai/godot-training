@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dllyohldopjgs"]
+
+[ext_resource type="PackedScene" uid="uid://6sgqgyx7my7u" path="res://3D-Assets/basic_goblin.tscn" id="1_3mph0"]
+[ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_qx7uc"]
+[ext_resource type="Script" uid="uid://bwl24b76xpl4h" path="res://Scripts/Player/Player.cs" id="3_k00gy"]
+[ext_resource type="Script" uid="uid://brbkiysgfssab" path="res://Scripts/Player/EffectsManager.cs" id="4_rvlyx"]
+[ext_resource type="Script" uid="uid://bon21xynwjllv" path="res://Scripts/CameraSpringArm.cs" id="5_qx7uc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_66313"]
+
+[sub_resource type="Curve" id="Curve_85h15"]
+_limits = [0.0, 2.5, -0.5, 2.0671377]
+_data = [Vector2(0.18683553, 0.02524352), 0.0, 1.3045328, 0, 1, Vector2(1.3958719, 1.602471), 0.90539926, 0.90539926, 0, 0, Vector2(2.0671377, 2.0837176), 0.716924, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66313"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_fhsvb"]
+colors = PackedColorArray(0.83, 1, 0.9971667, 0.019607844, 0.8255208, 1, 0.99727374, 0.60784316)
+
+[node name="BFISH" type="CharacterBody3D" unique_id=414083801]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=196685373]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_66313")
+
+[node name="Basic_Goblin" parent="." unique_id=1236843860 instance=ExtResource("1_3mph0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.5000002, 0)
+
+[node name="TrailRenderer" type="Node3D" parent="." unique_id=2128802048]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("2_qx7uc")
+Lifetime = 0.6
+MinVertexDistance = 1.0
+curve = SubResource("Curve_85h15")
+alignment = 0
+bevelAmount = 0.303
+material = SubResource("StandardMaterial3D_66313")
+castShadows = 1
+colorGradient = SubResource("Gradient_fhsvb")
+
+[node name="Player" type="Node" parent="." unique_id=157517517 node_paths=PackedStringArray("PlayerBody3D")]
+script = ExtResource("3_k00gy")
+PlayerBody3D = NodePath("..")
+
+[node name="EffectsManager" type="Node" parent="." unique_id=295239673]
+script = ExtResource("4_rvlyx")
+
+[node name="SpringArmPivot" type="Node3D" parent="." unique_id=1025799612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 0)
+script = ExtResource("5_qx7uc")
+_maxVerticalAngle = 0.6981317007977318
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot" unique_id=475111931]
+spring_length = 6.0
+
+[node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D" unique_id=1020362020]
+
+[node name="Camera3D" type="Camera3D" parent="SpringArmPivot" unique_id=1957737848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.536743e-07, 7.000004)

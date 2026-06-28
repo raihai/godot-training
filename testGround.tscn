@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://cd4ab83i02svt"]
 
-[ext_resource type="Script" uid="uid://dv6ser7ob4efb" path="res://Scripts/TrailRenderer.cs" id="2_85h15"]
-[ext_resource type="Script" uid="uid://bwl24b76xpl4h" path="res://Scripts/Player/Player.cs" id="3_8lxdw"]
-[ext_resource type="Script" uid="uid://brbkiysgfssab" path="res://Scripts/Player/EffectsManager.cs" id="4_kwewr"]
+[ext_resource type="PackedScene" uid="uid://dllyohldopjgs" path="res://3D-Assets/bfish.tscn" id="1_rkps0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rkps0"]
 sky_top_color = Color(0.08653041, 0.33116814, 0.99999994, 1)
@@ -38,23 +36,6 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85h15"]
 render_priority = 0
 shader = SubResource("Shader_85h15")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_66313"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_rkps0"]
-
-[sub_resource type="Curve" id="Curve_85h15"]
-_limits = [0.0, 2.5, -0.5, 2.0671377]
-_data = [Vector2(0.18683553, 0.02524352), 0.0, 1.3045328, 0, 1, Vector2(1.3958719, 1.602471), 0.90539926, 0.90539926, 0, 0, Vector2(2.0671377, 2.0837176), 0.716924, 0.0, 1, 0]
-point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66313"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-
-[sub_resource type="Gradient" id="Gradient_fhsvb"]
-colors = PackedColorArray(0.83, 1, 0.9971667, 0.019607844, 0.8255208, 1, 0.99727374, 0.60784316)
 
 [node name="Main" type="Node3D" unique_id=751697577]
 
@@ -195,41 +176,5 @@ operation = 2
 height = 1.3
 sides = 20
 
-[node name="BFISH" type="CharacterBody3D" parent="." unique_id=203749536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 12.5, -44.5)
-
-[node name="3DPersonView" type="Camera3D" parent="BFISH" unique_id=496263425]
-transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 10, 15.000002)
-fov = 70.0
-
-[node name="TopDownView" type="Camera3D" parent="BFISH" unique_id=1668255137]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 40, 10)
-visible = false
-fov = 70.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BFISH" unique_id=1550208817]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_66313")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BFISH" unique_id=350956629]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-mesh = SubResource("SphereMesh_rkps0")
-
-[node name="TrailRenderer" type="Node3D" parent="BFISH" unique_id=1580032858]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-script = ExtResource("2_85h15")
-Lifetime = 0.6
-MinVertexDistance = 1.0
-curve = SubResource("Curve_85h15")
-alignment = 0
-bevelAmount = 0.303
-material = SubResource("StandardMaterial3D_66313")
-castShadows = 1
-colorGradient = SubResource("Gradient_fhsvb")
-
-[node name="Player" type="Node" parent="BFISH" unique_id=2026189859 node_paths=PackedStringArray("PlayerBody3D")]
-script = ExtResource("3_8lxdw")
-PlayerBody3D = NodePath("..")
-
-[node name="EffectsManager" type="Node" parent="BFISH" unique_id=1680313780]
-script = ExtResource("4_kwewr")
+[node name="BFISH" parent="." unique_id=414083801 instance=ExtResource("1_rkps0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.2, 12.5, -44.4)

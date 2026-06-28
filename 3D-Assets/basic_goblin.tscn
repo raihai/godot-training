@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://6sgqgyx7my7u"]
+
+[ext_resource type="PackedScene" uid="uid://xv010xtmiygu" path="res://addons/GoblinPack_Free/GLB/Characters/Basic_Goblin.glb" id="1_e2swb"]
+
+[node name="Basic_Goblin" unique_id=1236843860 instance=ExtResource("1_e2swb")]

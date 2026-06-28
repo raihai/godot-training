@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 
 project/assembly_name="LearningGodot"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 move_right={

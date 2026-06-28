@@ -33,7 +33,7 @@ public partial class RunState : BaseState
             direction = direction.Normalized();
         }
         // velocity movement
-        float acceleration = player.GetPlayerAccelerationValue();
+        float acceleration = player.GetAcceleration ();
         _currentHorizontalSpeed = Mathf.MoveToward(_currentHorizontalSpeed, player.GetPlayerMoveForce(), acceleration *(float)delta); // speedup
         _currPlayerVelocity.X = direction.X * _currentHorizontalSpeed; 
         _currPlayerVelocity.Z = direction.Z * _currentHorizontalSpeed;

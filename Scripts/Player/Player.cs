@@ -12,7 +12,9 @@ public partial class Player : Node
 	private float _moveLeftValue {  get; set; }
 	private float _moveRightValue { get; set; }
     private float _playerMoveForce { get; set; } = 20f;
-    private float _acceleration { get; set; } =	100f;
+    private float _acceleration { get; set; } =	80f;
+
+	private Vector2 _mousePosition {  get; set; }
 
 	//states
     private StateMachine stateMachine { get; set; } = new StateMachine();
@@ -27,6 +29,8 @@ public partial class Player : Node
 		_moveBackValue = 0f;
 		_moveLeftValue = 0f;
         _moveRightValue = 0f;
+
+		_mousePosition = Vector2.Zero;
 
 		_idleState = new IdleState(this);
 		_runState = new RunState(this);
@@ -52,11 +56,19 @@ public partial class Player : Node
         _moveRightValue = Input.IsActionPressed("move_right") ? 1.0f : 0.0f;
 
 		stateMachine.Update(delta);
+
+
+		// get mouse position
 		
 	}
 
     public override void _PhysicsProcess(double delta) {
         stateMachine.PhysicsUpdate(delta);
+
+		//get mousePostion
+		_mousePosition = GetViewport().GetMousePosition().Normalized();
+
+		GD.Print(_mousePosition);	
     }
 
 	public override void _Input(InputEvent input) {
@@ -89,7 +101,7 @@ public partial class Player : Node
 		return stateMachine;
 	}
 
-	public float GetPlayerAccelerationValue() {
+	public float GetAcceleration() {
 		return _acceleration;
 	}
 

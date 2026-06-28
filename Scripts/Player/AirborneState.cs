@@ -36,7 +36,7 @@ public partial class AirborneState : BaseState
         //velocity
         //_currPlayerVelocity.X = direction.X * _airborneSpeed;
         //_currPlayerVelocity.Z = direction.Z * _airborneSpeed;
-        _currPlayerVelocity.Y -= player.GetPlayerAccelerationValue() * (float)delta;
+        _currPlayerVelocity.Y -= player.GetAcceleration () * (float)delta;
 
         player.PlayerBody3D.Velocity = _currPlayerVelocity;
        
